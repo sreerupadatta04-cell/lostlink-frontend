@@ -1,5 +1,6 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
+  "routes": [
+    { "src": "/api/(.*)", "dest": "https://lostlink-jc09.onrender.com/api/$1" },
+    { "src": "/(.*)", "dest": "/" }
   ]
 }
