@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+
+  body {
+    @apply bg-ink-950 text-white font-body;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-signal text-ink-950 font-display font-bold px-6 py-3 rounded-xl hover:bg-signal-dim transition-all duration-200 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-ghost {
+    @apply border border-white/10 text-white/70 font-body px-6 py-3 rounded-xl hover:border-white/30 hover:text-white transition-all duration-200 active:scale-95;
+  }
+
+  .card {
+    @apply bg-ink-800 border border-white/5 rounded-2xl;
+  }
+
+  .input {
+    @apply w-full bg-ink-900 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/30 font-body text-sm focus:outline-none focus:border-signal/50 focus:ring-1 focus:ring-signal/50 transition-all duration-200;
+  }
+
+  .label {
+    @apply block text-xs font-display font-semibold text-white/50 uppercase tracking-wider mb-2;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-display font-semibold;
+  }
+
+  .badge-safe {
+    @apply badge bg-signal/10 text-signal border border-signal/20;
+  }
+
+  .badge-found {
+    @apply badge bg-amber-400/10 text-amber-400 border border-amber-400/20;
+  }
+
+  .badge-recovered {
+    @apply badge bg-blue-400/10 text-blue-400 border border-blue-400/20;
+  }
+
+  .glow-signal {
+    box-shadow: 0 0 30px rgba(0,229,160,0.12), 0 0 60px rgba(0,229,160,0.06);
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.2); }
+
+/* Grid dot pattern */
+.dot-grid {
+  background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Animations */
+.animate-fade-in { animation: fadeIn 0.4s ease forwards; }
+.animate-slide-up { animation: slideUp 0.4s ease forwards; }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
